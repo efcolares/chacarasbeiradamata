@@ -14,6 +14,7 @@ export function LandscapeVideo({ index, className = "" }: { index: number; class
   const title = `Vídeo ${number} das Chácaras Beira da Mata`;
 
   function showVideo() {
+    window.dispatchEvent(new Event("beira-video-open"));
     setOpen(true);
     dialogRef.current?.showModal();
   }
@@ -26,7 +27,7 @@ export function LandscapeVideo({ index, className = "" }: { index: number; class
       </video>
       <span className="video-play" aria-hidden="true">▶</span>
     </button>
-    <dialog ref={dialogRef} className="video-dialog" aria-label={title} onClose={() => setOpen(false)} onClick={(event) => { if (event.target === dialogRef.current) dialogRef.current?.close(); }}>
+    <dialog ref={dialogRef} className="video-dialog" aria-label={title} onClose={() => { setOpen(false); window.dispatchEvent(new Event("beira-video-close")); }} onClick={(event) => { if (event.target === dialogRef.current) dialogRef.current?.close(); }}>
       <div className="video-dialog-inner">
         <button type="button" className="video-close" onClick={() => dialogRef.current?.close()}>Fechar ×</button>
         {open && <video src={src} poster={poster} controls autoPlay playsInline aria-label={title} />}
