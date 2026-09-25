@@ -2,6 +2,7 @@ import Image from "next/image";
 import logo from "../../public/logo.png";
 import { ArrowDown, ArrowUpRight, Heart, Leaf, MapPin, Moon, Sun, Trees } from "lucide-react";
 import { Header } from "@/components/header";
+import { LandscapeVideo } from "@/components/landscape-video";
 import { contactUrl, site } from "@/data/site";
 const basePath = "/chacarasbeiradamata";
 const videos = [1, 2, 3].map((number) => ({
@@ -9,10 +10,6 @@ const videos = [1, 2, 3].map((number) => ({
   poster: `${basePath}/posters/paisagem-${number}.jpg`,
   alt: `Vídeo ${number} das Chácaras Beira da Mata`,
 }));
-function LandscapeVideo({ index, className = "" }: { index: number; className?: string }) {
-  const item = videos[index];
-  return <div className={`video-frame ${className}`}><Image src={item.poster} alt={item.alt} fill sizes="(max-width: 700px) 100vw, 50vw" className="image-cover video-poster"/><video autoPlay loop muted playsInline preload="metadata" poster={item.poster} aria-label={item.alt}><source src={item.src} type="video/mp4" /></video></div>;
-}
 const moments = [
   { icon: Trees, title: "Respire com calma", text: "Deixe a paisagem inspirar uma pausa na rotina." },
   { icon: Sun, title: "Dias ao ar livre", text: "Mais tempo para olhar ao redor e aproveitar cada momento." },
