@@ -20,5 +20,5 @@ O workflow `.github/workflows/deploy.yml` compila o site e envia `out/` para o G
 ## Antes de divulgar
 
 - Atualize `src/data/site.ts` com localização e WhatsApp reais. O botão de WhatsApp só aparece após informar o número.
-- Troque as imagens ilustrativas em `src/data/site.ts` por fotografias reais, com autorização de uso.
+- Os três vídeos enviados estão em `public/videos/`, com capas em `public/posters/`. Para trocá-los, mantenha os nomes `paisagem-1.mp4` a `paisagem-3.mp4` e atualize as capas correspondentes.
 - Confirme serviços, comodidades, disponibilidade e condições antes de anunciá-los. Não há reservas nem pagamentos implementados.
